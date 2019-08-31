@@ -1,1 +1,1 @@
-# cheex-in-seets
+# Project Name: Cheeks n' Seats
