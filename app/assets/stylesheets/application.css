@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.btn {border-radius: 0.5rem}
 
+.screen-centered {display: flex; height: 100%; align-items: center; justify-content: center}
 .clearfix::after {content: ""; clear: both; display: table;}
 .hoverable-dark {transition: box-shadow 0.25s}
 .hoverable-dark:hover {box-shadow: 0 8px 17px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.5);}

@@ -13,4 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require stimulus-init
 //= require_tree .
+
+M.AutoInit();
+
