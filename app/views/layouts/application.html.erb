@@ -5,11 +5,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style='width: 100%; height: 100vh; background: #9e9e9e'>
+    <nav class='z-depth-3' style='position: fixed'>
+      <a href='#' class='brand-logo left'>Cheeky Bois</a>
+      <ul id='nav-mobile' class='right'>
+        <li><a href='#'>Login</a></li>
+      </ul>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
