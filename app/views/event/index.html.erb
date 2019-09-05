@@ -1,10 +1,10 @@
 <img src='bg1.png' style='position: fixed; z-index: -999; height: 100%'>
-<div style='height: 4rem; width: 100%'></div>
+<div style='height: 5rem; width: 100%'></div>
 <div class='' style='width: 90%; margin: 0 auto'>
   <div class='col s12'>
   <% 0.upto(5) do |n| %>
-    <div class='row'>
-    <div class='' style='height: 12.5rem; border-radius: 2rem; margin-bottom: 1rem; margin: auto; overflow: hidden'>
+    <div class='row' style='width: 100%; margin: 0 auto 20px auto'>
+    <div class='z-depth-4' style='height: 12.5rem; border-radius: 2rem; margin-bottom: 1rem; margin: auto; overflow: hidden; width: 100%'>
       <div class='' style='float: left; width: 25%; height: 100%; overflow: hidden'>
         <img src='https://lorempixel.com/100/200/nightlife'>
       </div>
@@ -12,7 +12,10 @@
       <div class='title-box red lighten-2' style='height: 33.3%; padding: 1rem 1rem 1rem 1rem'>
         <h5 style='color: white; margin: 0'>Show Name <%= n %></h5>
       </div>
-      <div style='height: 66.6%; width: 100%; background: rgba(255,255,255,0.85)'>
+      <div style='height: 66.6%; width: 100%; background: rgba(255,255,255,0.85); padding: 1rem'>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Location: Yeet</div>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Genre: Yeet</div>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Price: 99</div>
       </div>
       </div>
     </div>
