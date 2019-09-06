@@ -1,18 +1,23 @@
 <div class='screen-centered'>
   <%#<img src='https://lorempixel.com/400/800/nightlife' class='responsive-img' style='position: fixed; z-index: -999; width: 100%'>%>
   <img src='bg1.png' style='position: fixed; z-index: -999; height: 100%'>
+  <%= form_tag('/form', method: :post) do %>
   <div class='col s12'>
   <div class='row'>
     <h4 style='color: #ffffff; text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black, 2px 2px 0 #000000, 3px 4px 4px #000000'>Where ya at?</h4>
     <div class='z-depth-3' style='padding: 0 1rem 0 1rem; border: 1px solid white; border-radius: 1rem; background: white'>
       <div class='input-field'>
-        <input  id='location' type='text' class='' style='margin: 0; background: white; color: black'>
-        <label for='location' style='color: black'>Location</label>
+        <!-- <input  id='location' type='text' class='' style='margin: 0; background: white; color: black'> -->
+        <!-- <label for='location' style='color: black'>Location</label> -->
+        <%= label_tag :city %>
+        <%= text_field_tag :city %>
       </div>
     </div>
   </div>
   <div class='row'>
-    <a class='right waves-effect waves-light btn red' style='margin-right: 1rem'>Shows!</a>
+    <!-- <a class='right waves-effect waves-light btn red' style='margin-right: 1rem'> -->
+    <%= submit_tag 'Shows!' %>
   </div>
   </div>
+  <% end %>
 </div>
