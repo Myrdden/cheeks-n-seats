@@ -16,5 +16,8 @@
 //= require stimulus-init
 //= require_tree .
 
-M.AutoInit();
+// M.AutoInit();
+$(document).ready(function(){
+  $('select').formSelect();
+});
 
