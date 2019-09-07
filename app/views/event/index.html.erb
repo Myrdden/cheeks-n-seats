@@ -1,6 +1,19 @@
 <img src='bg1.png' style='position: fixed; z-index: -999; height: 100%'>
 <div style='height: 5rem; width: 100%'></div>
 <div class='' style='width: 90%; margin: 0 auto'>
+
+  <%= form_tag '/search', method: :get do %>
+    <%= select_tag "genre" options_for_select(
+      [
+       ['Comedy', 'comedy'],
+       ['Tragedy', 'tragedy'],
+       ['Historical', 'historical'],
+       ['Musical', 'musical']
+     ]
+    )%>
+    <%= submit_tag 'Filter' %>
+  <% end %>
+
   <div class='col s12'>
   <% @events.each do |event| %>
     <div class='row' style='width: 100%; margin: 0 auto 20px auto'>
