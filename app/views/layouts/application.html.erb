@@ -17,8 +17,12 @@
       <a href='#' class='brand-logo left'>Cheeky Bois</a>
       <ul id='nav-mobile' class='right'>
         <li><a href='#' style='font-size: 2rem'>Login</a></li>
-        <li><%= link_to 'Register', register_path %></li>
-      </ul>
+        <li><%= link_to 'Register', register_path unless current_user %></li>
+        <li><%= link_to 'Sign In', login_path unless current_user %></li>
+        <% if current_user %>
+          <li><%= link_to 'Log Out', logout_path %></li>
+          <li><%= link_to current_user.name, profile_path %></li>
+        <% end %>
     </nav>
 
     <section class="flash-message">
@@ -26,6 +30,7 @@
         <p><%= message %></p>
       <% end %>
     </section>
+
     <%= yield %>
   </body>
 </html>

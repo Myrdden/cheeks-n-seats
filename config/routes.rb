@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get '/show', to: 'event#show'
   get '/index', to: 'event#index'
 
-  # Registration
+  # Authentication
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
   # User Profile
   get '/profile', to: 'users#show'
