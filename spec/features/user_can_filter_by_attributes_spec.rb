@@ -5,15 +5,15 @@ feature 'filter' do
     visit '/index'
 
     expect(current_path).to eq('/index')
-    expect(page).to have_content('genre')
+    expect(page).to have_content('Genre')
 
-    select "comedy"
+    select "Comedy"
     click_on "Filter"
 
-    expect(current_path).to eq("/search")
+    expect(current_path).to eq("/index")
 
     within(first(".genre")) do
-      expect(page).to have_content('comedy')
+      expect(page).to have_content('Comedy')
     end
 
     # expect(page).to have_content('price')
