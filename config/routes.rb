@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   root to: 'entry#index'
   get '/show', to: 'event#show'
   get '/index', to: 'event#index'
+
+  # Registration
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
+
+  # User Profile
+  get '/profile', to: 'users#show'
 end

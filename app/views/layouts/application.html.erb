@@ -17,9 +17,15 @@
       <a href='#' class='brand-logo left'>Cheeky Bois</a>
       <ul id='nav-mobile' class='right'>
         <li><a href='#' style='font-size: 2rem'>Login</a></li>
+        <li><%= link_to 'Register', register_path %></li>
       </ul>
     </nav>
 
+    <section class="flash-message">
+      <% flash.each do |type, message| %>
+        <p><%= message %></p>
+      <% end %>
+    </section>
     <%= yield %>
   </body>
 </html>
