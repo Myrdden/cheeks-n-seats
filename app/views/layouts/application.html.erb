@@ -10,11 +10,23 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Register', '/register' unless current_user %>
+      <%= link_to 'Sign In', '/login' unless current_user %>
+      <% if current_user %>
+        <%= link_to 'Log out', '/logout' %>
+        <%= link_to 'Profile', '/profile' %>
+        <p>Logged in as <%= current_user.name %>.</p>
+      <% end %>
+    </nav>
+
     <section class="flash-message">
       <% flash.each do |type, message| %>
         <p><%= message %></p>
       <% end %>
     </section>
+
     <%= yield %>
   </body>
 </html>
