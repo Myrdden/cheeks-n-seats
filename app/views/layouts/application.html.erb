@@ -7,9 +7,14 @@
 
     <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+
+
   </head>
 
   <body style='width: 100%; height: 100vh; background: #9e9e9e'>
@@ -20,6 +25,8 @@
       </ul>
     </nav>
 
+    <!-- Compiled and minified JavaScript -->
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
