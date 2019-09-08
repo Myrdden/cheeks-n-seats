@@ -12,12 +12,17 @@
        ['Musical', 'musical']
      ]
     )%>
-    <%= select_tag "price", options_for_select(
-      [
-       ['50', '50'],
-       ['25', '25']
-     ]
-    )%>
+    <div id="slider"></div>
+       <!-- <p class="range-field"> -->
+         <!-- <input type="range" id="range" min="0" max="100" /> -->
+       <!-- </p> -->
+    <label for=price-start">Price Start:</>
+    <input id="price-start" type="number" />
+    <label for=price-start">Price End:</>
+    <input id="price-end" type="number" />
+
+    <input type="text" class="datepicker">
+
     <%= submit_tag 'Filter' %>
   <% end %>
 </ul>
