@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   root to: 'entry#index'
   get '/index', to: 'event#index'
   get '/show', to: 'event#show'
-  get '/apievents', to: 'apievents#show'
 
 end
