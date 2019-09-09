@@ -16,7 +16,7 @@ feature 'filter' do
       expect(page).to have_content('Comedy')
     end
 
-    # expect(page).to have_content('price')
-    # expect(page).to have_content('date')
+    expect(page).to have_content('price')
+    expect(page).to have_content('date')
   end
 end
