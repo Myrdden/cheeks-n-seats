@@ -17,14 +17,17 @@
  */
 .btn {border-radius: 0.5rem}
 
+body {width: 100%; height: 100vh; background: #9e9e9e}
 .screen-centered {display: flex; height: 100%; align-items: center; justify-content: center}
+.bg-image {position: fixed; z-index: -999; height: 100%; width: 100%}
+.navbar-link {font-size: 1.5rem}
+
 .clearfix::after {content: ""; clear: both; display: table;}
 .hoverable-dark {transition: box-shadow 0.25s}
 .hoverable-dark:hover {box-shadow: 0 8px 17px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.5);}
 .select-wrapper {background-color: rgba(0,0,0,0.2)}
 input[type=text]:not(.browser-default) {background-color: rgba(0,0,0,0.2); color: #ffffff}
 input[type=password]:not(.browser-default) {background-color: rgba(0,0,0,0.2); color: #ffffff}
-.cart-margins {margin: 2rem 2rem 1rem 0}
 
 .flash {position: fixed; top: 6rem; left: 2.5rem; z-index: 9999; height: 3rem; width: 20rem; padding: 0.75rem; margin: 0}
 [type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {border-color: white}

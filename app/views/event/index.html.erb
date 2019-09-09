@@ -1,6 +1,4 @@
-<img src='bg1.png' style='position: fixed; z-index: -999; height: 100%'>
 <div style='height: 5rem; width: 100%'></div>
-<div class='' style='width: 90%; margin: 0 auto'>
 
 <ul class='genre'>
   <%= form_tag '/index', method: :get do %>
@@ -20,22 +18,32 @@
   <% end %>
 </ul>
 
+<div class='events-container'>
   <div class='col s12'>
   <% @events.each do |event| %>
-    <div class='row' style='width: 100%; margin: 0 auto 20px auto'>
-    <div class='z-depth-4' style='height: 12.5rem; border-radius: 2rem; margin-bottom: 1rem; margin: auto; overflow: hidden; width: 100%'>
-      <div class='' style='float: left; width: 25%; height: 100%; overflow: hidden'>
-        <img src='https://lorempixel.com/100/200/nightlife'>
-      </div>
-      <div class='' style='float: left; height: 100%; width: 75%'>
-      <div class='title-box red lighten-2' style='height: 33.3%; padding: 1rem 1rem 1rem 1rem'>
-        <h5 style='color: white; margin: 0'><%= event.name %></h5>
-      </div>
-      <div style='height: 66.6%; width: 100%; background: rgba(255,255,255,0.85); padding: 1rem'>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Location: <%= event.venue[:address] %></div>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Genre: <%= event.genre %></div>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Price: <%=  %></div>
-      </div>
+    <div class='events-row'>
+    <div class='z-depth-4 events-card'>
+      <div style='position: relative'>
+        <div class='events-image-container'>
+            <img src='https://lorempixel.com/100/200/nightlife' style='width: 100%'>
+        </div>
+
+        <div class='events-content-container'>
+          <div class='title-box red lighten-2 events-title-box'>
+            <h5 class='events-title'><%= event.name %></h5>
+            <em class='events-genre'><%= event.genre %></em>
+          </div>
+          <div class='events-info-box'>
+            <div class='events-info-text'>
+              <%= event.date[:date] %>
+            </div>
+            <div class='events-info-text'>
+              <%= event.venue[:name] %><br>
+              <!-- <%#= event.venue[:address] %><br> -->
+              <!-- <%#= event.venue[:city]%>, <%#= event.venue[:state] %> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     </div>
