@@ -4,14 +4,7 @@
 
 <ul class='genre'>
   <%= form_tag '/index', method: :get do %>
-    <%= select_tag "genre", options_for_select(
-      [
-       ['Comedy', 'comedy'],
-       ['Tragedy', 'tragedy'],
-       ['Historical', 'historical'],
-       ['Musical', 'musical']
-     ]
-    )%>
+    <%= select_tag "genre", options_for_select(@genres)%>
     <div id="slider"></div>
        <!-- <p class="range-field"> -->
          <!-- <input type="range" id="range" min="0" max="100" /> -->
@@ -21,7 +14,7 @@
     <label for=price-start">Price End:</>
     <input id="price-end" type="number" />
 
-    <input type="text" class="datepicker">
+    <input type="text" class="datepicker" id="date">
 
     <%= submit_tag 'Filter' %>
   <% end %>
