@@ -32,9 +32,9 @@
         <h5 style='color: white; margin: 0'><%= event.name %></h5>
       </div>
       <div style='height: 66.6%; width: 100%; background: rgba(255,255,255,0.85); padding: 1rem'>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Location: <%= event.venue[:name] %></div>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Genre: Yeet</div>
-        <div style='color: #ee6e73; font-size: 1.5rem'>Price: 99</div>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Location: <%= event.venue[:address] %></div>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Genre: <%= event.genre %></div>
+        <div style='color: #ee6e73; font-size: 1.5rem'>Price: <%=  %></div>
       </div>
       </div>
     </div>
