@@ -1,5 +1,6 @@
 .events-container {width: 90%; margin: 0 auto}
-.events-row {width: 100%; margin: 0 auto 20px auto}
+.events-row {width: 100%; margin-bottom: 20px; margin-left: 0; margin-right: 0}
+.events-row:after {content: ""; display: table; clear: both}
 .events-card {height: auto; border-radius: 2rem; margin-bottom: 1rem; overflow: hidden; width: 100%}
 .events-image-container {position: absolute; top: 0px; left: 0px; bottom: 0px; width: 33.3%}
 .events-content-container {float: right; width: 66.6%}

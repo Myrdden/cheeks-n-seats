@@ -2,28 +2,29 @@
 <div class='events-container'>
   <div class='col s12'>
   <% @events.each do |event| %>
-    <div class='row events-row'>
+    <div class='events-row'>
     <div class='z-depth-4 events-card'>
       <div style='position: relative'>
-      <div class='events-image-container'>
-          <img src='https://lorempixel.com/100/200/nightlife' style='width: 100%'>
-      </div>
+        <div class='events-image-container'>
+            <img src='https://lorempixel.com/100/200/nightlife' style='width: 100%'>
+        </div>
 
-      <div class='events-content-container'>
-      <div class='title-box red lighten-2 events-title-box'>
-        <h5 class='events-title'><%= event.name %></h5>
-        <em class='events-genre'><%= event.genre %></em>
-      </div>
-      <div class='events-info-box'>
-        <div class='events-info-text'>
-          <%= event.date[:date] %>
+        <div class='events-content-container'>
+          <div class='title-box red lighten-2 events-title-box'>
+            <h5 class='events-title'><%= event.name %></h5>
+            <em class='events-genre'><%= event.genre %></em>
+          </div>
+          <div class='events-info-box'>
+            <div class='events-info-text'>
+              <%= event.date[:date] %>
+            </div>
+            <div class='events-info-text'>
+              <%= event.venue[:name] %><br>
+              <!-- <%#= event.venue[:address] %><br> -->
+              <!-- <%#= event.venue[:city]%>, <%#= event.venue[:state] %> -->
+            </div>
+          </div>
         </div>
-        <div class='events-info-text'>
-          <%= event.venue[:name] %><br>
-          <%= event.venue[:address] %><br>
-          <%= event.venue[:city]%>, <%= event.venue[:state] %>
-        </div>
-      </div>
       </div>
     </div>
     </div>
