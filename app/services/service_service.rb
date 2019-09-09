@@ -12,6 +12,12 @@ class ServiceService
     end
   end
 
+  def self.get_genres
+    parse(fetch('/genres', {})).map! do |genre_data|
+      GenreList.new(genre_data)
+    end
+  end
+
   private
   def self.fetch(uri, params)
     Faraday.get("http://localhost:9292/api/v1#{uri}") do |req|
