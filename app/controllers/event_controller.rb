@@ -2,6 +2,7 @@ class EventController < ApplicationController
   def show
   end
   def index
+    binding.pry
     filter_by = {}
     if params[:genre]
       filter_by[:genre] = params[:genre]
@@ -19,6 +20,11 @@ class EventController < ApplicationController
       params[:date]
     end
     @events = ServiceService.events_filtered(filter_by)
-    @genres = ServiceService.get_genres()
+    all_genres = @events.map do |event|
+      event.genre
+    end
+    @genres = all_genres.uniq.map do |genre|
+      [genre, genre]
+    end
   end
 end
