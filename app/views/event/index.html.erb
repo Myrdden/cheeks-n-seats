@@ -5,12 +5,12 @@
     <%= select_tag "genre", options_for_select(@venue_info.genres)%>
     <div id="slider"></div>
 
-    <label for=price-start">Price Start:</>
-    <input id="price-start" type="number" />
+    <label for=price-start">Price Start: </>
+    <input id="price-start" name="minPrice" type="number" value="<%= @venue_info.priceMin %>"/>
     <label for=price-start">Price End:</>
-    <input id="price-end" type="number" />
+    <input id="price-end" name="maxPrice" type="number" value="<%= @venue_info.priceMax %>" />
 
-    <input type="text" class="datepicker" id="date">
+    <input type="text" class="datepicker" id="date" name="date" value="<%= @venue_info.date %>" />
 
     <%= submit_tag 'Filter' %>
   <% end %>
