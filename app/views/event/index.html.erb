@@ -1,4 +1,13 @@
 <div style='height: 5rem; width: 100%'></div>
+<button class='btn modal-trigger' data-target='modal1'>modal</button>
+<div id='modal1' class='modal bottom-sheet' style='height: 92.5vh; max-height: 100%'>
+  <div style='height: 7.5vh; border-bottom: 1px solid black'>
+    <button class='modal-close btn'>Close</button>
+  </div>
+  <div class='modal-content' style='background: white'>
+    <p>yeet</p>
+  </div>
+</div>
 <div class='events-container'>
   <div class='col s12'>
   <% @events.each do |event| %>
@@ -31,3 +40,4 @@
   <% end %>
   </div>
 </div>
+
