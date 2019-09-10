@@ -11,7 +11,7 @@
     <div style='height: 2px; width: 100%; margins: 0 10%; background: black'></div>
     <div>
       <ul>
-      <% event.dates.each do |date| %>
+      <% event.dates.reverse.each do |date| %>
         <li style='margin-bottom: 1rem; padding: 0 1rem'><a href='<%= date[:url] %>' class='btn' style='width: 100%'><%= Event.datify(date) %></a></li>
       <% end %>
       </ul>
