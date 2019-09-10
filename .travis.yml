@@ -4,8 +4,6 @@ rvm:
 cache: bundler
 services:
   - postgresql
-addons:
-  - postgresql: '11.5'
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 script:
