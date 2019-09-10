@@ -3,11 +3,11 @@ rvm:
   - 2.4.1
 cache: bundler
 services:
-- postgresql
+  - postgresql
 addons:
-- postgresql: '11.5'
+  - postgresql: '9.4'
 before_script:
-- cp config/database.yml.travis config/database.yml
-- psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
 script:
-- bundle exec rspec
+  - bundle exec rspec
