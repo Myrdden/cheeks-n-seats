@@ -4,9 +4,7 @@
   <%= form_tag '/index', method: :get do %>
     <%= select_tag "genre", options_for_select(@venue_info.genres)%>
     <div id="slider"></div>
-       <!-- <p class="range-field"> -->
-         <!-- <input type="range" id="range" min="0" max="100" /> -->
-       <!-- </p> -->
+
     <label for=price-start">Price Start:</>
     <input id="price-start" type="number" />
     <label for=price-start">Price End:</>
