@@ -21,11 +21,13 @@
 // M.AutoInit();
 $(document).ready(function(){
   $('select').formSelect();
+  var priceStart = document.getElementById('price-start');
+  var priceEnd = document.getElementById('price-end');
 
   var sliderElem = document.getElementById('slider');
   console.log(slider)
   var slider = noUiSlider.create(sliderElem, {
-    start: [20, 80],
+    start: [priceStart.value, priceEnd.value],
     connect: true,
     // step: 1,
     // behaviour: 'unconstrained',
@@ -36,8 +38,6 @@ $(document).ready(function(){
     }
   });
 
-  var priceStart = document.getElementById('price-start');
-  var priceEnd = document.getElementById('price-end');
   slider.on('update', function (values, handle) {
       var value = values[handle];
       if (handle == 1) {
