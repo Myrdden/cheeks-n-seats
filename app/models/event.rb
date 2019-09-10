@@ -5,7 +5,7 @@ class Event
     @url = data[:url]
     @genre = data[:genre]
     @venue = data[:venue]
-    @date = data[:date]
+    @date = data[:date][:date]
     @min_price = data[:minPrice]
     @max_price = data[:maxPrice]
   end
