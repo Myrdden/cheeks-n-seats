@@ -1,5 +1,10 @@
 class EventFacade
+  attr_reader :priceMin, :priceMax, :date
+
   def initialize(fields)
+    @priceMin = fields[:minPrice]
+    @priceMax = fields[:maxPrice]
+    @date = fields[:date]
     @fields = fields
     @service = EventService.new
   end
