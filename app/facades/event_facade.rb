@@ -27,8 +27,14 @@ class EventFacade
   attr_reader :service
 
   def get_events
-    service.fetch_events(@fields).map do |event_data|
-      Event.new(event_data)
+    events = {}
+    service.fetch_events(@fields).each do |event_data|
+      if events[event_data[:name]]
+        events[event_data[:name]].add_date(event_data[:date], event_data[:url])
+      else
+        events[event_data[:name]] = Event.new(event_data)
+      end
     end
+    events.values
   end
 end
