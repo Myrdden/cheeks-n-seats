@@ -5,11 +5,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <img src='bg1.png' class='bg-image'>
+    <nav class='z-depth-3' style='position: fixed; height: 4rem; z-index: 999'>
+      <a href='#' class='brand-logo left'>Cheeky Bois</a>
+      <ul id='nav-mobile' class='right'>
+        <li><%= link_to 'Register', register_path, {class: 'navbar-link'} unless current_user %></li>
+        <li><%= link_to 'Sign In', login_path, {class: 'navbar-link'} unless current_user %></li>
+        <% if current_user %>
+          <li><%= link_to 'Log Out', logout_path %></li>
+          <li><%= link_to current_user.name, profile_path %></li>
+        <% end %>
+    </nav>
+
+    <section class="flash-message">
+      <% flash.each do |type, message| %>
+        <p><%= message %></p>
+      <% end %>
+    </section>
+
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
