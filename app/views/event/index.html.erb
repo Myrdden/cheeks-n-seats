@@ -2,7 +2,7 @@
 
 <ul class='genre'>
   <%= form_tag '/index', method: :get do %>
-    <%= select_tag "genre", options_for_select(@genres)%>
+    <%= select_tag "genre", options_for_select(@facade.venue_info.genres)%>
     <div id="slider"></div>
        <!-- <p class="range-field"> -->
          <!-- <input type="range" id="range" min="0" max="100" /> -->
@@ -20,7 +20,7 @@
 
 <div class='events-container'>
   <div class='col s12'>
-  <% @events.each do |event| %>
+  <% @facade.venue_info.each do |event| %>
     <div class='events-row'>
     <div class='z-depth-4 events-card'>
       <div style='position: relative'>
@@ -35,12 +35,12 @@
           </div>
           <div class='events-info-box'>
             <div class='events-info-text'>
-              <%= event.date[:date] %>
+              <%= event.date %>
             </div>
             <div class='events-info-text'>
               <%= event.venue[:name] %><br>
-              <!-- <%#= event.venue[:address] %><br> -->
-              <!-- <%#= event.venue[:city]%>, <%#= event.venue[:state] %> -->
+              <%= event.venue[:address] %><br>
+              <%= event.venue[:city]%>, <%= event.venue[:state] %>
             </div>
           </div>
         </div>
