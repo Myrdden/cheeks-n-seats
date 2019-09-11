@@ -2,8 +2,14 @@ require 'rails_helper'
 
 describe EventService do
   it 'can query for events by city' do
-    event_data = EventService.events_filtered({city: "Denver"})
+    service = EventService.new
+    event_data = service.fetch_events({city: "Denver"})
 
     expect(event_data).to be_an(Array)
+    expect(EventService).to be_a(Class)
+
+    within(first(".show")) do
+      expect(page).to have_css('.show')
+    end
   end
 end
