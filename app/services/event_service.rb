@@ -1,7 +1,13 @@
 class EventService
 
-  def fetch_events(fields)
-    parse(fetch('/events', fields))
+  def fetch_events(params)
+    redis = RedisService.new
+    response = redis.get_by(params)
+    if !response
+      response = parse(fetch('/events', params))
+      redis.set_by(params, response)
+    end
+    return response
   end
 
   private
