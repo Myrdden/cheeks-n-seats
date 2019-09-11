@@ -3,22 +3,22 @@
 <div class='events-container'>
   <ul class='genre'>
     <%= form_tag '/index', method: :get do %>
-      <%= select_tag "genre", options_for_select(@venue_info.genres)%>
+      <%= select_tag "genre", options_for_select(facade.genres)%>
       <div id="slider"></div>
 
       <label for=price-start">Price Start: </>
-      <input id="price-start" name="minPrice" type="number" value="<%= @venue_info.priceMin %>"/>
+      <input id="price-start" name="minPrice" type="number" value="<%= facade.priceMin %>"/>
       <label for=price-start">Price End:</>
-      <input id="price-end" name="maxPrice" type="number" value="<%= @venue_info.priceMax %>" />
+      <input id="price-end" name="maxPrice" type="number" value="<%= facade.priceMax %>" />
 
-      <input type="text" class="datepicker" id="date" name="date" value="<%= @venue_info.date %>" />
+      <input type="text" class="datepicker" id="date" name="date" value="<%= facade.date %>" />
 
       <%= submit_tag 'Filter' %>
     <% end %>
   </ul>
 
   <div class='col s12'>
-  <% @venue_info.events.each_with_index do |event, n| %>
+  <% facade.events.each_with_index do |event, n| %>
     <div class='events-row'>
       <button class='modal-trigger' style='margins: 0; padding: 0; border: 0; width: 100%; background: transparent' data-target='modal<%= n %>'>
       <div class='z-depth-4 events-card'>
