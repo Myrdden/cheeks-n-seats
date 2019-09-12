@@ -9,6 +9,14 @@
     </div>
     <h5>Location: Earth</h5>
     <h5>Time: 2pm</h5>
+
+    <section>
+      <%= form_tag '/text', method: :post do %>
+        <%= hidden_field_tag 'event', 'replace me with an event (show) ID' %>
+        <%= label_tag 'friend', "Friend's phone number" %>
+        <%= text_field_tag :friend %>
+      <% end %>
+    </section>
+
   </div>
 </div>
-
