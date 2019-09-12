@@ -11,10 +11,9 @@ class EventFacade
 
   def events
     response = {}
-    binding.pry
     service.fetch_events(@fields).each do |event_data|
       if response[event_data[:name]]
-        response[event_data[:name]].add_date(event_data[:date], event_data[:url])
+        response[event_data[:name]].add_date(event_data[:date], event_data[:time], event_data[:url])
       else
         response[event_data[:name]] = Event.new(event_data)
       end
