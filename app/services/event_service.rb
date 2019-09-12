@@ -12,7 +12,7 @@ class EventService
 
   private
   def fetch(uri, params)
-    Faraday.get("http://localhost:9292/api/v1#{uri}") do |req|
+    Faraday.get("http://localhost:9393/api/v1#{uri}") do |req|
       req.params = params
     end
   end
