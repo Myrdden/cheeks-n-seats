@@ -12,7 +12,7 @@
 
     <section>
       <%= form_tag '/text', method: :post do %>
-        <%= hidden_field_tag 'event', 'replace me with an event (show) ID' %>
+        <%= hidden_field_tag 'event', event.id %>
         <%= label_tag 'friend', "Friend's phone number" %>
         <%= text_field_tag :friend %>
       <% end %>
