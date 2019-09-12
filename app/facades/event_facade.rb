@@ -10,7 +10,16 @@ class EventFacade
   end
 
   def events
-    @_events ||= get_events
+    response = {}
+    binding.pry
+    service.fetch_events(@fields).each do |event_data|
+      if response[event_data[:name]]
+        response[event_data[:name]].add_date(event_data[:date], event_data[:url])
+      else
+        response[event_data[:name]] = Event.new(event_data)
+      end
+    end
+    response.values
   end
 
   def genres
@@ -25,10 +34,4 @@ class EventFacade
   private
 
   attr_reader :service
-
-  def get_events
-    service.fetch_events(@fields).map do |event_data|
-      Event.new(event_data)
-    end
-  end
 end

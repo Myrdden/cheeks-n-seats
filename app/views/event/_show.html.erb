@@ -1,0 +1,22 @@
+<div id='modal<%= n %>' class='modal bottom-sheet' style='height: 92.5vh; max-height: 100%'>
+  <div style='height: 33.3%; width: 100%; position: relative; overflow: hidden'>
+    <img src='https://lorempixel.com/360/230/nightlife' style='width: 100%'>
+    <button class='modal-close btn' style='position: absolute; top: 0.912rem; left: 0.912rem'>Close</button>
+    <h4 style='position: absolute; bottom: 0px; left: 0; margin-left: 0.912rem; color: #ffffff; text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black, 2px 2px 0 #000000, 3px 4px 4px #000000'><%= event.name %></h4>
+  </div>
+  <div class='modal-content' style='background: white; height: 66.6%'>
+    <div style=''>
+      <h5 style='color: rgb(238, 110, 115)'><%= event.genre %></h5>
+    </div>
+    <div style='height: 2px; width: 100%; margins: 0 10%; background: black'></div>
+    <div>
+      <ul>
+      <% event.dates.reverse.each do |date| %>
+        <li style='margin-bottom: 1rem; padding: 0 1rem'><a href='<%= date[:url] %>' class='btn' style='width: 100%'><%= Event.datify(date) %></a></li>
+      <% end %>
+      </ul>
+    </div>
+    <p>yeet #<%= n %></p>
+  </div>
+</div>
+

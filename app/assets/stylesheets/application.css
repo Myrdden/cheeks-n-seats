@@ -21,6 +21,7 @@ body {width: 100%; height: 100vh; background: #9e9e9e}
 .screen-centered {display: flex; height: 100%; align-items: center; justify-content: center}
 .bg-image {position: fixed; z-index: -999; height: 100%; width: 100%}
 .navbar-link {font-size: 1.5rem}
+.navbar-padding {width: 100%; height: 4rem}
 
 .clearfix::after {content: ""; clear: both; display: table;}
 .hoverable-dark {transition: box-shadow 0.25s}

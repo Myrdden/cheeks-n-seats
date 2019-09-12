@@ -1,12 +1,18 @@
 class EventService
 
-  def fetch_events(fields)
-    parse(fetch('/events', fields))
+  def fetch_events(params)
+    redis = RedisService.new
+    response = redis.get_by(params)
+    if !response
+      response = parse(fetch('/events', params))
+      redis.set_by(params, response)
+    end
+    return response
   end
 
   private
   def fetch(uri, params)
-    Faraday.get("http://localhost:9292/api/v1#{uri}") do |req|
+    Faraday.get("http://localhost:9393/api/v1#{uri}") do |req|
       req.params = params
     end
   end
