@@ -1,7 +1,8 @@
 class Event
-  attr_reader :name, :genre, :venue, :dates, :min_price, :max_price
+  attr_reader :name, :image_url, :genre, :venue, :dates, :min_price, :max_price
   def initialize(data)
     @name = data[:name]
+    @image_url = data[:image_url]
     @genre = data[:genre]
     @venue = data[:venue]
     @dates = [{date: data[:date], time: data[:time], url: data[:url]}]
