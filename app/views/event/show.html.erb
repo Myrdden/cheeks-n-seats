@@ -1,3 +1,11 @@
 <div style='height: 5rem; width: 100%'></div>
 <button class='btn modal-trigger' data-target='modal<%= n %>'>Open</button>
 <%= render partial: 'show', locals: {n: n, event: event} %>
+
+<section>
+  <%= form_tag '/text', method: :post do %>
+    <%= hidden_field_tag 'event', event.id %>
+    <%= label_tag 'friend', "Friend's phone number" %>
+    <%= text_field_tag :friend %>
+  <% end %>
+</section>

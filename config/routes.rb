@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # User Profile
   get '/profile', to: 'users#show'
+
+  # Text Confirmation
+  get '/text', to: 'text#show'
 end
