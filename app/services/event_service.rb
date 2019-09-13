@@ -11,8 +11,8 @@ class EventService
 
   private
   def self.fetch(uri)
-    # Faraday.get("#{ENV['SINATRA_URL']}/api/v1#{uri}")
-    Faraday.get("http://localhost:9292/api/v1#{uri}")
+    Faraday.get("#{ENV['SINATRA_URL']}/api/v1#{uri}")
+    # Faraday.get("http://localhost:9292/api/v1#{uri}")
   end
 
   def self.parse(response)
