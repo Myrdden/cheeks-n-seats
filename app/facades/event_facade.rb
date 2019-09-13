@@ -6,12 +6,11 @@ class EventFacade
     @priceMax = fields[:maxPrice]
     @date = fields[:date]
     @fields = fields
-    @service = EventService.new
   end
 
   def events
     response = {}
-    service.fetch_events(@fields).each do |event_data|
+    EventService.fetch_events(@fields).each do |event_data|
       if response[event_data[:name]]
         response[event_data[:name]].add_date(event_data[:date], event_data[:time], event_data[:url])
       else

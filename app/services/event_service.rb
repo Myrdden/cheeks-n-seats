@@ -1,6 +1,6 @@
 class EventService
 
-  def fetch_events(params)
+  def self.fetch_events(params)
     redis = RedisService.new
     response = redis.get_by(params)
     if !response
@@ -14,13 +14,13 @@ class EventService
   end
 
   private
-  def fetch(uri, params)
+  def self.fetch(uri, params)
     Faraday.get("http://localhost:9393/api/v1#{uri}") do |req|
       req.params = params
     end
   end
 
-  def parse(response)
+  def self.parse(response)
     JSON.parse(response, symbolize_names: true)
   end
 end
