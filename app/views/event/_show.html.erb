@@ -1,6 +1,8 @@
 <div id='modal<%= n %>' class='modal bottom-sheet' style='height: 92.5vh; max-height: 100%'>
   <div style='height: 33.3%; width: 100%; position: relative; overflow: hidden'>
-    <img src='https://lorempixel.com/360/230/nightlife' style='width: 100%'>
+    <div class='screen-centered' style='background: black'>
+      <img src='<%= event.image_url %>' style='height: 100%'>
+    </div>
     <button class='modal-close btn' style='position: absolute; top: 0.912rem; left: 0.912rem'>Close</button>
     <h4 style='position: absolute; bottom: 0px; left: 0; margin-left: 0.912rem; color: #ffffff; text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black, 2px 2px 0 #000000, 3px 4px 4px #000000'><%= event.name %></h4>
   </div>
@@ -16,7 +18,6 @@
       <% end %>
       </ul>
     </div>
-    <p>yeet #<%= n %></p>
   </div>
 </div>
 

@@ -19,7 +19,7 @@ RSpec.describe 'Login Page', type: :feature do
 
       expect(current_path).to eq('/profile')
       expect(page).to have_content("Welcome, #{user.name}!")
-      expect(page).to have_link('Log out')
+      expect(page).to have_link('Log Out')
     end
 
     it "displays an error message when I put in the wrong credentials" do
