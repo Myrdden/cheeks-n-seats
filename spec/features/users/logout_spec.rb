@@ -16,10 +16,10 @@ RSpec.describe 'Logout', type: :feature do
       click_button 'Login'
 
       expect(page).to have_content("Welcome, #{user.name}!")
-      expect(page).to have_link('Log out')
+      expect(page).to have_link('Log Out')
 
-      click_link 'Log out'
-      
+      click_link 'Log Out'
+
       expect(current_path).to eq(root_path)
       expect(page).to have_content('You are logged out.')
     end

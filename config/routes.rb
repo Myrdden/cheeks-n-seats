@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'entry#index'
+  root to: 'event#index'
   get '/index', to: 'event#index'
   get '/show', to: 'event#show'
 
@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # User Profile
   get '/profile', to: 'users#show'
+
+  # Text Confirmation
+  get '/text', to: 'text#show'
 end

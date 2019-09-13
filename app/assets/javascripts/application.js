@@ -19,6 +19,15 @@
 //= require_tree .
 
 // M.AutoInit();
+
+document.addEventListener('DOMContentLoaded', function() {
+  let elems = document.querySelectorAll('.modal');
+  M.Modal.init(elems, {
+    inDuration: 500,
+    outDuration: 500
+  });
+});
+
 $(document).ready(function(){
   $('select').formSelect();
   var priceStart = document.getElementById('price-start');
