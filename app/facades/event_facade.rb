@@ -12,7 +12,6 @@ class EventFacade
   def events
     response = {}
     events_data = service.fetch_events(@fields)
-    binding.pry
     events_data.each do |event_data|
       if response[event_data[:name]]
         response[event_data[:name]].add_date(event_data[:date], event_data[:url])

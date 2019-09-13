@@ -4,10 +4,11 @@ class Event
     @name = data[:name]
     @genre = data[:genre]
     @venue = data[:venue]
-    @dates = [data[:date].merge({url: data[:url]})]
+    @dates = data[:date]
     @min_price = data[:minPrice]
     @max_price = data[:maxPrice]
   end
+  # .merge({url: data[:url]})]
 
   def add_date(date, url)
     @dates << date.merge({url: url})

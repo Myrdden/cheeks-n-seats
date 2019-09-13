@@ -3,11 +3,13 @@ class EventService
   def fetch_events(params)
     redis = RedisService.new
     response = redis.get_by(params)
-    if !response
-      response = parse(fetch('/events', params))
+    if response
+      JSON.parse(response, symbolize_names: true)[:events]
+    else !response
+      response = fetch('/events', params).body
       redis.set_by(params, response)
+      parse(response)[:events]
     end
-    return response
   end
 
   private
@@ -18,6 +20,6 @@ class EventService
   end
 
   def parse(response)
-    JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response, symbolize_names: true)
   end
 end
