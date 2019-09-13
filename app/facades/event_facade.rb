@@ -31,7 +31,7 @@ class EventFacade
       end
     end
     response = response.values
-    #response = filter(response, @fields) if !@fields.empty?
+    response = filter(response, @fields) if !@fields.empty?
     redis.set_by(@fields, response.to_json) if update
     return response
   end
