@@ -15,14 +15,14 @@ class EventFacade
   def events
     response = {}
     update = false
-    redis = RedisService.new
-    events = redis.get_by(@fields)
-    if !events
+    # redis = RedisService.new
+    # events = redis.get_by(@fields)
+    # if !events
       events = EventService.fetch_events
-      update = true
-    else
-      events = JSON.parse(events, symbolize_names: true)
-    end
+    #   update = true
+    # else
+    #   events = JSON.parse(events, symbolize_names: true)
+    # end
     events.each do |event_data|
       if response[event_data[:name]]
         response[event_data[:name]].add_date(event_data[:date], event_data[:time], event_data[:url])
@@ -31,9 +31,8 @@ class EventFacade
       end
     end
     response = response.values
-    binding.pry
-    response = filter(response, @fields) if !@fields.empty?
-    redis.set_by(@fields, response.to_json) if update
+    # response = filter(response, @fields) if !@fields.empty?
+    # redis.set_by(@fields, response.to_json) if update
     return response
   end
 
@@ -54,13 +53,23 @@ class EventFacade
       params.each do |k,v|
         case k
         when 'minPrice'
-          valid = false if event.min_price >= v.to_i
+          if event.min_price >= v.to_f
+            valid = false
+            p "#{event.min_price} >= #{v.to_f}"
+          end
         when 'maxPrice'
-          valid = false if event.max_price <= v.to_i
+          if event.max_price <= v.to_f
+            valid = false
+            p "#{event.max_price} <= #{v.to_f}"
+          end
         when 'date'
-          valid = false if !event.dates.any? {|date| match_date(date[:date], v)}
+          # if !event.dates.any? {|date| match_date(date[:date], v)}
+          #   valid = false
+          #   p 
+          # end
         end
       end
+      p valid
       valid
     end
   end
