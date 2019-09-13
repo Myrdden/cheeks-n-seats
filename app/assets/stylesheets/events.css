@@ -9,3 +9,6 @@
 .events-genre {color: white; font-size: 1.15rem}
 .events-info-box {height: 66.6%; width: 100%; background: rgba(255,255,255,0.85); padding: 1rem}
 .events-info-text {color: #ee6e73; font-size: 1.5rem}
+
+.filter-box {background: rgba(255,255,255,0.8); padding: 2rem; border-radius: 2rem; margin-bottom: 2rem}
+.filter-text {color: black; font-size: 1rem}
