@@ -24,23 +24,22 @@
     <div class='events-row'>
       <button class='modal-trigger' style='margins: 0; padding: 0; border: 0; width: 100%; background: transparent' data-target='modal<%= n %>'>
       <div class='z-depth-4 events-card' style='position: relative'>
-        <%# <div style='position: relative; height: 100%'> %>
-          <div class='events-image-container screen-centered'>
-              <img src='https://lorempixel.com/100/200/nightlife' style='width: 100%'>
-          </div>
+        <div class='events-image-container screen-centered'>
+            <%# <img src='https://lorempixel.com/100/200/nightlife' style='width: 100%'> %>
+            <img src='<%= event.image_url %>' style='height: 100%'>
+        </div>
 
-          <div class='events-content-container'>
-            <div class='title-box red lighten-2 events-title-box'>
-              <h5 class='events-title'><%= event.name %></h5>
-              <em class='events-genre'><%= event.genre %></em>
-            </div>
-            <div class='events-info-box'>
-              <div class='events-info-text'>
-                <%#= event.date %>
-              </div>
+        <div class='events-content-container'>
+          <div class='title-box red lighten-2 events-title-box'>
+            <h5 class='events-title'><%= event.name %></h5>
+            <em class='events-genre'><%= event.genre %></em>
+          </div>
+          <div class='events-info-box'>
+            <div class='events-info-text'>
+              <%#= event.date %>
             </div>
           </div>
-        <%# </div> %>
+        </div>
       </div>
     </button>
     </div>
