@@ -1,6 +1,6 @@
 class RedisService
   def initialize
-    @redis = Redis.new(host: 'localhost')
+    @redis = Redis.new
     @expiry = 1800 # 30 minutes
   end
 
