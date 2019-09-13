@@ -5,6 +5,9 @@ class EventService
     response = redis.get_by(params)
     if !response
       response = fetch('/events', params).body
+      while response == '' # This can only end well
+        response = fetch('/events', params).body
+      end
       redis.set_by(params, response)
     end
     return parse(response)
