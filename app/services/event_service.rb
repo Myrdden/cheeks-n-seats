@@ -1,23 +1,18 @@
 class EventService
 
-  def self.fetch_events(params)
-    redis = RedisService.new
-    response = redis.get_by(params)
-    if !response
-      response = fetch('/events', params).body
-      while response == '' # This can only end well
-        response = fetch('/events', params).body
-      end
-      redis.set_by(params, response)
+  def self.fetch_events
+    response = fetch('/events').body
+    while response == '' # This can only end well
+      puts "o no"
+      response = fetch('/events').body
     end
     return parse(response)
   end
 
   private
-  def self.fetch(uri, params)
-    Faraday.get("http://localhost:9393/api/v1#{uri}") do |req|
-      req.params = params
-    end
+  def self.fetch(uri)
+    Faraday.get("#{ENV['SINATRA_URL']}/api/v1#{uri}")
+    # Faraday.get("http://localhost:9292/api/v1#{uri}")
   end
 
   def self.parse(response)

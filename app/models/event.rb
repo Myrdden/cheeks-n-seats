@@ -6,8 +6,12 @@ class Event
     @genre = data[:genre]
     @venue = data[:venue]
     @dates = [{date: data[:date], time: data[:time], url: data[:url]}]
-    @min_price = data[:minPrice]
-    @max_price = data[:maxPrice]
+    if data[:minPrice].class == Hash
+      @min_price = data[:minPrice][:value].to_f
+    else
+      @min_price = data[:minPrice] || 0.0
+    end
+    @max_price = data[:maxPrice] || Float::MAX
   end
 
   def add_date(date, time, url)
