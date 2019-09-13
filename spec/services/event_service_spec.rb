@@ -6,10 +6,6 @@ describe EventService do
     event_data = service.fetch_events({city: "Denver"})
 
     expect(event_data).to be_an(Array)
-    expect(EventService).to be_a(Class)
-
-    within(first(".show")) do
-      expect(page).to have_css('.show')
-    end
+    expect(event_data[0]).to be_an(Hash)
   end
 end
